@@ -1,20 +1,21 @@
 # Bloomfeld
 
-Simple [Bloom Filter](https://en.wikipedia.org/wiki/Bloom_filter) implementation. 
-Please ready it through, if you have no idea what Bloom Filter does and why it does work the way it does.
+Simple **Bloom Filter** implementation. 
+Please [read about them](https://en.wikipedia.org/wiki/Bloom_filter) first, especially if you do not know what Bloom Filter does or why it does work the way it does.
 
-## Usage
+## How-to
 
 ### Create filter
 
-Creating Bloom Filter is the tricky part.
+Creating Bloom Filter optimally is the trickiest part.
 There are some parameters which you should calculate first, depending on your use case.
-Also choosing the right hash function is difficult - you can use Murmur or other fast hashes.
+Also choosing the right hash function is difficult - you can use Murmur or other fast hashes, which are favored over MDA5 and similar.
 
 For example, lets say we want to store 1000 strings and have a false positivity probability of 0.1 (10%).
-According to the results obtained from calculation utility (*BloomFilterCalculations*), we should create a Bloom Filter with *4793* bits and *3* hash functions.
-For the sake of simplicity, we will use the string`s *hashCode*. 
-To actually get three different hash functions, we can use the string in lower-case and upper-case.
+According to the results obtained from calculation utility ([BloomFilterCalculations](https://github.com/voho/bloomfeld/blob/master/src/main/java/cz/voho/bloomfeld/filter/BloomFilterCalculations.java)), we should create a Bloom Filter with *4793* bits and *3* hash functions.
+You can also use some [online calculator](https://krisives.github.io/bloom-calculator/).
+For the sake of simplicity, we will just use the standard *hashCode*.
+To actually get three different hash functions, we can just transform the string into lower- or upper-case.
 
 So the filter definition would look like this:
 
@@ -41,7 +42,7 @@ As the name suggests, you should really pay attention to what the returned value
 - *FALSE* = element is not in the set (always correct)
 
 In other words: you can say for certain that an element is NOT in the set, but you cannot say for sure that element REALLY IS in the set.
-That is the limitation of Bloom Filter.
+That is the limitation of a Bloom filter.
 It still has very nice use cases though!
 
 ### Put elements in filter
@@ -51,8 +52,3 @@ Simply call the *add* method.
 ```java
 filter.add("hello");
 ```
-
-## Calculator references
-
-* https://krisives.github.io/bloom-calculator/
-* http://stackoverflow.com/questions/658439/how-many-hash-functions-does-my-bloom-filter-need
