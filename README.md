@@ -18,18 +18,22 @@ To actually get three different hash functions, we can use the string in lower-c
 
 So the filter definition would look like this:
 
-        BloomFilter<String> filter = new DefaultBloomFilter<String>(
-            1000,
-            s -> s.hashCode(),
-            s -> s.toLowerCase().hashCode(),
-            s -> s.toUpperCase().hashCode()
-        );
+```java
+BloomFilter<String> filter = new DefaultBloomFilter<String>(
+    1000,
+    s -> s.hashCode(),
+    s -> s.toLowerCase().hashCode(),
+    s -> s.toUpperCase().hashCode()
+);
+```
 
 ### Query filter
 
 To query a filter, call its *probablyContains* method.
 
-        boolean contains = filter.probablyContains("hello");
+```java
+boolean contains = filter.probablyContains("hello");
+```ixe
         
 As the name suggests, you should really pay attention to what the returned value means:
 
@@ -44,7 +48,9 @@ It still has very nice use cases though!
 
 Simply call the *add* method.
 
-        filter.add("hello");
+```java
+filter.add("hello");
+```
 
 ## Calculator references
 
