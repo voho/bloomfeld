@@ -33,7 +33,7 @@ To query a filter, call its *probablyContains* method.
 
 ```java
 boolean contains = filter.probablyContains("hello");
-```ixe
+```
         
 As the name suggests, you should really pay attention to what the returned value means:
 
