@@ -1,5 +1,7 @@
 # Bloomfeld
 
+[![Travis](https://travis-ci.org/voho/bloomfeld.svg?branch=master)](https://travis-ci.org/voho/bloomfeld) [![codecov.io](https://codecov.io/github/voho/bloomfeld/coverage.svg?branch=master)](https://codecov.io/github/voho/bloomfeld?branch=master)
+
 Simple **Bloom Filter** implementation. 
 Please [read about them](https://en.wikipedia.org/wiki/Bloom_filter) first, especially if you do not know what Bloom Filter does or why it does work the way it does.
 
@@ -51,4 +53,29 @@ Simply call the *add* method.
 
 ```java
 filter.add("hello");
+```
+
+## Usage
+
+You can include this library in your Maven project using the Jitpack service.
+
+This has two steps. Step one, include this repository:
+
+```
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+Step two, add this dependency (you can find the latest version in `pom.xml` file):
+
+```
+<dependency>
+    <groupId>com.github.voho</groupId>
+    <artifactId>bloomfeld</artifactId>
+    <version>{SPECIFY_VERSION_HERE}</version>
+</dependency>
 ```
