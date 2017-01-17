@@ -1,21 +1,22 @@
 # Bloomfeld
 
 [![Travis](https://travis-ci.org/voho/bloomfeld.svg?branch=master)](https://travis-ci.org/voho/bloomfeld) [![codecov.io](https://codecov.io/github/voho/bloomfeld/coverage.svg?branch=master)](https://codecov.io/github/voho/bloomfeld?branch=master)
+[![JitPack](https://jitpack.io/v/voho/bloomfeld.svg)](https://jitpack.io/#voho/bloomfeld)
 
 Simple **Bloom Filter** implementation. 
-Please [read about them](https://en.wikipedia.org/wiki/Bloom_filter) first, especially if you do not know what Bloom Filter does or why it does work the way it does.
+Please [read about what it is](https://en.wikipedia.org/wiki/Bloom_filter) if you do not know what a Bloom Filter does or why it does work the way it does.
 
-## How-to
+## How-To
 
 ### Create filter
 
-Creating Bloom Filter optimally is the trickiest part.
+Creating a Bloom Filter optimaly is the trickiest part.
 There are some parameters which you should calculate first, depending on your use case.
 Also choosing the right hash function is difficult - you can use Murmur or other fast hashes, which are favored over MDA5 and similar.
 
 For example, lets say we want to store 1000 strings and have a false positivity probability of 0.1 (10%).
 According to the results obtained from calculation utility ([BloomFilterCalculations](https://github.com/voho/bloomfeld/blob/master/src/main/java/cz/voho/bloomfeld/filter/BloomFilterCalculations.java)), we should create a Bloom Filter with *4793* bits and *3* hash functions.
-You can also use some [online calculator](https://krisives.github.io/bloom-calculator/).
+You can also use an [online calculator](https://krisives.github.io/bloom-calculator/).
 For the sake of simplicity, we will just use the standard *hashCode*.
 To actually get three different hash functions, we can just transform the string into lower- or upper-case.
 
