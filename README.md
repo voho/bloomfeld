@@ -1,6 +1,7 @@
 # Bloomfeld
 
-[![Travis](https://travis-ci.org/voho/bloomfeld.svg?branch=master)](https://travis-ci.org/voho/bloomfeld) [![codecov.io](https://codecov.io/github/voho/bloomfeld/coverage.svg?branch=master)](https://codecov.io/github/voho/bloomfeld?branch=master)
+[![Travis](https://travis-ci.org/voho/bloomfeld.svg?branch=master)](https://travis-ci.org/voho/bloomfeld) 
+[![codecov.io](https://codecov.io/github/voho/bloomfeld/coverage.svg?branch=master)](https://codecov.io/github/voho/bloomfeld?branch=master)
 [![JitPack](https://jitpack.io/v/voho/bloomfeld.svg)](https://jitpack.io/#voho/bloomfeld)
 
 Simple **Bloom Filter** implementation. 
